@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  /* Clean Kitchen Nutrition — Brand Palette */
+  --color-background: #FAF6F3;
+  --color-foreground: #5C4A42;
+
+  /* Sage green (primary) — remaps all existing green-* classes */
+  --color-green-primary: #7A9B7D;
+  --color-green-dark: #5E7E61;
+  --color-green-light: #EEF4EF;
+
+  /* Extended brand tokens */
+  --color-sage: #7A9B7D;
+  --color-sage-dark: #5E7E61;
+  --color-sage-light: #A8C4AB;
+  --color-cream: #FAF6F3;
+  --color-beige: #F0E8E0;
+  --color-brown: #5C4A42;
+  --color-brown-light: #8C7269;
+  --color-gold: #F5C842;
+
+  /* Risk levels */
+  --color-risk-high: #C0392B;
+  --color-risk-moderate: #D97706;
+  --color-risk-low: #7A9B7D;
+
+  /* UI */
+  --color-gray-border: #E8DDD6;
+  --color-gray-light: #F5EFE9;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-inter), 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: var(--color-foreground);
+  background: var(--color-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-archivo), 'Archivo', ui-sans-serif, system-ui, sans-serif;
+}
