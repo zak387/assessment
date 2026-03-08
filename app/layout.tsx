@@ -19,6 +19,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Are You and Your Family Eating Non-Toxic? | Free Assessment",
   description: "Take this 2-minute assessment to find out how clean your family's diet actually is.",
+  twitter: {
+    card: "summary_large_image",
+    title: "Are You and Your Family Eating Non-Toxic?",
+    description: "Take this free 2-minute assessment to find your family's toxic load score.",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
