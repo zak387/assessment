@@ -66,15 +66,31 @@ export default function AssessmentPage() {
         .single();
 
       if (error) throw error;
-
       sessionStorage.setItem("assessmentId", data.id);
-      sessionStorage.setItem("assessmentResult", JSON.stringify(result));
-      router.push("/calculating");
     } catch (err) {
       console.error("Failed to save assessment:", err);
-      sessionStorage.setItem("assessmentResult", JSON.stringify(result));
-      router.push("/calculating");
     }
+
+    sessionStorage.setItem("assessmentResult", JSON.stringify(result));
+
+    // Fire Kit.com subscription — non-blocking, won't delay navigation
+    const email = sessionStorage.getItem("email") ?? "";
+    const firstName = sessionStorage.getItem("firstName") ?? "";
+    if (email) {
+      fetch("/api/kit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          firstName,
+          score: result.totalScore,
+          tier: result.tier,
+          blindSpots: result.blindSpots.slice(0, 3).map((b) => b.category),
+        }),
+      }).catch((err) => console.warn("Kit subscribe failed:", err));
+    }
+
+    router.push("/calculating");
   }
 
   return (

@@ -30,6 +30,7 @@ export default function LeadCaptureForm() {
       sessionStorage.setItem("leadId", "preview-lead");
     }
     sessionStorage.setItem("firstName", firstName.trim());
+    sessionStorage.setItem("email", email.trim().toLowerCase());
     router.push("/assessment");
   }
 
