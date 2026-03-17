@@ -57,7 +57,7 @@ export default function LeadCaptureForm() {
         </div>
         {error && <p className="text-risk-high text-sm text-center mb-4">{error}</p>}
         <Button type="submit" size="lg" disabled={loading} className="w-full">
-          {loading ? "Starting..." : "Get My Free Score →"}
+          {loading ? "Starting..." : "Take the Assessment →"}
         </Button>
         <p className="text-xs text-brown-light text-center mt-4">Your information is secure and will never be shared.</p>
       </form>
