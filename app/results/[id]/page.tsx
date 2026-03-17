@@ -8,6 +8,7 @@ import Container from "@/components/ui/Container";
 import ScoreDisplay from "@/components/results/ScoreDisplay";
 import RadarChart from "@/components/results/RadarChart";
 import BlindSpots from "@/components/results/BlindSpots";
+import ScrollPopup from "@/components/results/ScrollPopup";
 import WhatThisMeans from "@/components/results/WhatThisMeans";
 import NextSteps from "@/components/results/NextSteps";
 import CTASection from "@/components/results/CTASection";
@@ -114,6 +115,7 @@ export default function ResultsPage() {
 
           {/* CTA — placed high for conversion */}
           <motion.div
+            data-section="cta"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
@@ -163,6 +165,9 @@ export default function ResultsPage() {
           </motion.div>
         </div>
       </Container>
+
+      {/* Scroll popup — fires at 40% scroll depth */}
+      <ScrollPopup />
     </div>
   );
 }
