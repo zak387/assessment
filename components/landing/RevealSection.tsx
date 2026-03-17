@@ -2,7 +2,7 @@ export default function RevealSection() {
   const items = [
     {
       title: "Your Non-Toxic Eating Score (0–100)",
-      desc: "See exactly how clean your family's diet actually is — no guessing.",
+      desc: "See exactly how clean your family's diet actually is. No guessing.",
     },
     {
       title: "Your Top 3 Blind Spots",
@@ -10,7 +10,7 @@ export default function RevealSection() {
     },
     {
       title: "A Simple, Personalized Action Plan",
-      desc: "Specific swaps based on your score — easy to act on this week.",
+      desc: "Specific swaps based on your score, easy to act on this week.",
     },
   ];
 
