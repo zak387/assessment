@@ -148,15 +148,7 @@ export default function ScrollPopup() {
             ))}
           </div>
 
-          {/* CTA */}
-          <button
-            onClick={() => setVisible(false)}
-            className="block w-full text-center bg-sage hover:bg-sage-dark text-white font-bold px-6 py-3.5 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-[14px]"
-          >
-            Open My Report Now
-          </button>
-
-          <p className="text-[11px] text-brown-light/60 text-center mt-3">
+          <p className="text-[11px] text-brown-light/60 text-center">
             Can&apos;t find it? Check your spam folder.
           </p>
         </div>

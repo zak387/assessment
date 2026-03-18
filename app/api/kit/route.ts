@@ -9,12 +9,13 @@ const TAG_IDS: Record<string, string> = {
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, firstName, score, tier, blindSpots } = await req.json() as {
+    const { email, firstName, score, tier, blindSpots, source } = await req.json() as {
       email: string;
       firstName: string;
       score: number;
       tier: string;
       blindSpots: string[];
+      source: string;
     };
 
     const tagId = TAG_IDS[tier];
@@ -35,6 +36,7 @@ export async function POST(req: NextRequest) {
           blind_spot_1: blindSpots[0] ?? "",
           blind_spot_2: blindSpots[1] ?? "",
           blind_spot_3: blindSpots[2] ?? "",
+          UTM_source: source,
         },
       }),
     });

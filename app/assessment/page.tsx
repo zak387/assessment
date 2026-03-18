@@ -86,6 +86,7 @@ export default function AssessmentPage() {
           score: result.totalScore,
           tier: result.tier,
           blindSpots: result.blindSpots.slice(0, 3).map((b) => b.category),
+          source: sessionStorage.getItem("source") ?? "",
         }),
       }).catch((err) => console.warn("Kit subscribe failed:", err));
     }

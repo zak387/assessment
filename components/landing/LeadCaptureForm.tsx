@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import { supabase } from "@/lib/supabase";
@@ -12,6 +12,11 @@ export default function LeadCaptureForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  useEffect(() => {
+    const source = new URLSearchParams(window.location.search).get("utm_source") ?? "";
+    if (source) sessionStorage.setItem("source", source);
+  }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
@@ -20,7 +25,11 @@ export default function LeadCaptureForm() {
     try {
       const { data, error: dbError } = await supabase
         .from("leads")
-        .insert({ first_name: firstName.trim(), email: email.trim().toLowerCase() })
+        .insert({
+          first_name: firstName.trim(),
+          email: email.trim().toLowerCase(),
+          utm_source: sessionStorage.getItem("source") ?? "",
+        })
         .select("id")
         .single();
       if (dbError) throw dbError;

@@ -23,6 +23,14 @@ export default function ResultsPage() {
   const params = useParams();
   const [result, setResult] = useState<AssessmentResult | null>(null);
   const [loading, setLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  function handleCopyLink() {
+    navigator.clipboard.writeText(window.location.origin).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    });
+  }
 
   useEffect(() => {
     const stored = sessionStorage.getItem("assessmentResult");
@@ -153,12 +161,17 @@ export default function ResultsPage() {
             <p className="text-xs text-brown-light">
               Want your family to take this?{" "}
               <button
-                onClick={() => navigator.clipboard.writeText(window.location.origin)}
-                className="text-sage font-bold underline"
+                onClick={handleCopyLink}
+                className="text-sage font-bold underline inline-flex items-center gap-1 transition-colors"
               >
-                Copy the link
+                {copied ? "✓ Link copied!" : "Share the link"}
               </button>
             </p>
+            {copied && (
+              <p className="text-[11px] text-sage mt-1">
+                Paste it and send it to them!
+              </p>
+            )}
             <p className="text-xs text-brown-light/50 mt-4">
               Clean Kitchen Nutrition · Powered by Sawa LLC
             </p>
