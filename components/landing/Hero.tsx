@@ -18,19 +18,12 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="text-[1.9rem] sm:text-4xl lg:text-[2.6rem] xl:text-5xl font-extrabold leading-[1.12] tracking-tight text-white mb-5 max-w-2xl text-left sm:text-center w-full">
-            Your Family Is Probably Eating{" "}
-            <span className="relative inline">
-              Hidden Toxins
-              <span className="absolute -bottom-1 left-0 right-0 h-[3px] bg-white/35 rounded-full" />
-            </span>{" "}
-            And You Don&apos;t Know It Yet.
+            Tired of thinking you&apos;re eating healthy, only to find out you&apos;re not?
           </h1>
 
           {/* Subheadline */}
           <p className="text-base sm:text-[1.05rem] text-white/85 max-w-md leading-relaxed mb-6 text-left sm:text-center w-full sm:mx-auto">
-            Take this free 2-minute assessment to find out exactly where toxic
-            ingredients are sneaking into your family&apos;s diet and what to do
-            about it.
+            Answer 10 questions to find out exactly where toxic ingredients are sneaking into your diet and what to do about it.
           </p>
 
           {/* Intro line + bullets */}
