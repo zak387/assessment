@@ -1,5 +1,9 @@
 "use client";
 
+import { landingCopy } from "@/data/copy";
+
+const { hero, badge } = landingCopy;
+
 export default function Hero() {
   return (
     <section className="hero-gradient w-full text-white overflow-hidden">
@@ -11,32 +15,28 @@ export default function Hero() {
             <div className="inline-flex items-center gap-2 bg-white/15 px-3.5 py-1.5 rounded-full">
               <span className="w-2 h-2 rounded-full bg-white/80 flex-shrink-0" />
               <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/80">
-                Free 2-Minute Assessment
+                {badge}
               </span>
             </div>
           </div>
 
           {/* Headline */}
           <h1 className="text-[1.9rem] sm:text-4xl lg:text-[2.6rem] xl:text-5xl font-extrabold leading-[1.12] tracking-tight text-white mb-5 max-w-2xl text-left sm:text-center w-full">
-            Tired of thinking you&apos;re eating healthy, only to find out you&apos;re not?
+            {hero.headline}
           </h1>
 
           {/* Subheadline */}
           <p className="text-base sm:text-[1.05rem] text-white/85 max-w-md leading-relaxed mb-6 text-left sm:text-center w-full sm:mx-auto">
-            Answer 10 questions to find out exactly where toxic ingredients are sneaking into your diet and what to do about it.
+            {hero.subheadline}
           </p>
 
           {/* Intro line + bullets */}
           <div className="w-full max-w-md sm:mx-auto mb-8">
             <p className="text-sm text-white/80 mb-3 text-left">
-              Take the assessment to find out:
+              {hero.bulletsIntro}
             </p>
             <ul className="space-y-2.5">
-              {[
-                "Your Non-Toxic Eating Score, most families are surprised by theirs",
-                "Your top 3 blind spots, the habits letting the worst ingredients through",
-                "What to swap first, based on your actual results",
-              ].map((item) => (
+              {hero.bullets.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-white/90">
                   <svg
                     className="w-4 h-4 flex-shrink-0 mt-0.5"
@@ -64,10 +64,10 @@ export default function Hero() {
               href="#get-started"
               className="inline-flex items-center justify-center gap-2 bg-white text-sage font-bold px-10 py-4 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-base w-full sm:w-auto"
             >
-              Take the Free Assessment &rarr;
+              {hero.ctaButton}
             </a>
             <p className="text-xs text-white/55 text-center">
-              Takes 2 minutes &middot; No credit card needed
+              {hero.ctaNote}
             </p>
           </div>
 
